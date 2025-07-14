@@ -15,13 +15,14 @@
 
   <!--Cabeçalho-->
   <header class="header">
-    <div class="header-left">
-      <button id="menu-toggle-btn" class="icon-button"><span class="material-symbols-outlined">menu</span></button>
+    <div class="header-left" title="Vmail">
+      <button id="menu-toggle-btn" title="Menu Principal" class="icon-button" aria-label="Abrir menu de navegação"><span
+          class="material-symbols-outlined">menu</span></button>
       <img src="docs/assets/img/logo.png" alt="Logo Vmail" class="logo-gmail"> <span id="mail">mail</span>
     </div>
 
     <div class="header-middle">
-      <div class="search-bar">
+      <div class="search-bar" aria-label="Caix de pesquisa">
         <span class="material-symbols-outlined search-icon">search</span>
         <input type="text" placeholder="Pesquisar e-mail" />
         <span class="material-symbols-outlined"> Filter_list</span>
@@ -29,38 +30,40 @@
     </div>
 
     <div class="header-right">
-      <button class="icon-button"><span class="material-symbols-outlined">help_outline</span></button>
-      <button class="icon-button"><span class="material-symbols-outlined">settings</span></button>
-      <button class="icon-button"><span class="material-symbols-outlined">apps</span></button>
-      <button class="icon-button profile-button">V</button>
+      <button class="icon-button" title="Suporte"><span class="material-symbols-outlined"
+          aria-label="Ajuda">help_outline</span></button>
+      <button class="icon-button" title="Configurações"><span class="material-symbols-outlined"
+          aria-label="Configurações">settings</span></button>
+      <button class="icon-button" title="Apps"><span class="material-symbols-outlined">apps</span></button>
+      <button class="icon-button profile-button" title="Conta do Google">V</button>
     </div>
   </header>
 
   <!--Container principal-->
   <div class="main-layout">
     <aside class="sidebar-left">
-      <button id="write" class="compose-btn">
+      <button id="write" class="compose-btn" aria-label="Escrever novo email">
         <span class="material-symbols-outlined">edit</span>
         Escrever
       </button>
-      <nav class="sidebar-nav">
+      <nav class="sidebar-nav" aria-label="Navegação Principal de emails">
         <ul>
-          <li class="active">
+          <li class="active" title="Caixa de Entrada" aria-current="page">
             <span class="material-symbols-outlined">inbox</span> Caixa de Entrada
             <span id="inbox-count" class="email-count"></span>
           </li>
-          <li><span class="material-symbols-outlined">star</span> Com estrela</li>
-          <li><span class="material-symbols-outlined">schedule</span> Adiados</li>
-          <li><span class="material-symbols-outlined">send</span> Enviados</li>
-          <li><span class="material-symbols-outlined">draft</span> Rascunhos</li>
-          <li id="moreBtn">
+          <li title="Favorito"><span class="material-symbols-outlined">star</span> Com estrela</li>
+          <li title="Adiados"><span class="material-symbols-outlined">schedule</span> Adiados</li>
+          <li title="Enviados"><span class="material-symbols-outlined">send</span> Enviados</li>
+          <li title="Rascunho"><span class="material-symbols-outlined">draft</span> Rascunhos</li>
+          <li id="moreBtn" role="button" tabindex="0" aria-expanded="false" aria-controls="moreOptions">
             <span class="material-symbols-outlined">expand_more</span> Mais
           </li>
           <div id="moreOptions" class="hidden">
-            <li>
+            <li title="Caixa de Spam">
               <span class="material-symbols-outlined">report</span> Spam
             </li>
-            <li>
+            <li title="Lixeira">
               <span class="material-symbols-outlined">delete</span> Lixeira
             </li>
           </div>
@@ -93,29 +96,19 @@
         <div class="email-row">
           <div class="email-row-left">
             <input type="checkbox" placeholder="teste" />
-            <span class="material-symbols-outlined">star_outline</span>
-            <span class="sender">Inter</span>
           </div>
           <div class="email-row-middle">
-            <span class="subject">Atualização na Política de Privacidade do Inter</span>
-            <span class="preview">- Confira o que mudou.</span>
           </div>
           <div class="email-row-right">
-            <span class="date">11 de jun.</span>
           </div>
         </div>
         <div class="email-row unread">
           <div class="email-row-left">
             <input type="checkbox" placeholder="teste" />
-            <span class="material-symbols-outlined">star_outline</span>
-            <span class="sender">Paulo Silveira | Alura</span>
           </div>
           <div class="email-row-middle">
-            <span class="subject">Por que tantas opções em tech podem te deixar mais perdido?</span>
-            <span class="preview">- Olá, quase 20 anos atrás...</span>
           </div>
           <div class="email-row-right">
-            <span class="date">11 de jun.</span>
           </div>
         </div>
       </div>
@@ -123,18 +116,25 @@
 
     <!--Links Complementares-->
     <aside class="sidebar-right">
-      <button class="icon-button"><img src="https://www.gstatic.com/companion/icon_assets/calendar_2020q4_2x.png"
-          alt="Calendário"></button>
-      <button class="icon-button"><img src="https://www.gstatic.com/companion/icon_assets/keep_2020q4_2x.png"
-          alt="Google Keep"></button>
-      <button class="icon-button"><img src="https://www.gstatic.com/companion/icon_assets/tasks_2021_2x.png"
-          alt="Tarefas"></button>
-      <button class="icon-button"><img src="docs/assets/img/phone.png" alt="contatos"></button>
-      <button class="icon-button"><span class="material-symbols-outlined">add</span></button>
+      <button class="icon-button" title="Agenda" aria-label="Acessar Agenda">
+        <img src="docs/assets/img/google-calendar.png" alt="Calendário">
+      </button>
+      <button class="icon-button" title="Keep" aria-label="Acessar Keep">
+        <img src="docs/assets/img/keeps.png" alt="Google Keep">
+      </button>
+      <button class="icon-button" title="Tarefas" aria-label="Lista de Tarefas">
+        <img src="https://www.gstatic.com/companion/icon_assets/tasks_2021_2x.png" alt="Tarefas">
+      </button>
+      <button class="icon-button" title="Contatos" aria-label="Verificar contatos">
+        <img src="docs/assets/img/phone.png" alt="contatos">
+      </button>
+      <button class="icon-button" title="Instalar Componentes" aria-label="adicionar">
+        <span class="material-symbols-outlined">add</span>
+      </button>
     </aside>
   </div>
   <!--Modal para inserção de dados-->
-  <div id="emailModal" class="modal-overlay">
+  <div id="emailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="modalTitle">
     <div class="modal-content">
       <div class="modal-header">
         <h2 id="modalTitle">Nova Mensagem</h2>

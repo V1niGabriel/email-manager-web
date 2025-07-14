@@ -132,6 +132,7 @@ body {
     background-color: var(--sidebar-bg);
     display: flex;
     flex-direction: column;
+    border-right: 1px solid var(--border-color);
 }
 
 .compose-btn {

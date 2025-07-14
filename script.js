@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="icon-button delete-forever-btn" title="Excluir para sempre"><span class="material-symbols-outlined">delete_forever</span></button>
                 `
                 : `
-                    <button class="icon-button edit-btn" title="Editar"><span class="material-symbols-outlined">edit</span></button>
-                    <button class="icon-button delete-btn" title="Excluir"><span class="material-symbols-outlined">delete</span></button>
-                    <button class="icon-button spam-btn" title="Marcar como spam"><span class="material-symbols-outlined">report</span></button>
+                    <button class="icon-button edit-btn" title="Editar" arial-label="Editar e-mail"><span class="material-symbols-outlined">edit</span></button>
+                    <button class="icon-button delete-btn" title="Excluir" arial-label="Excluir e-mail"><span class="material-symbols-outlined">delete</span></button>
+                    <button class="icon-button spam-btn" title="Marcar como spam" arial-label="Marcar como span"><span class="material-symbols-outlined">report</span></button>
                 `;
 
             emailRow.innerHTML = `
@@ -133,8 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // FUNÇÃO PARA ATUALIZAR A VISUALIZAÇÃO ATIVA
     const setActiveView = (view, element) => {
         currentView = view;
-        navItems.forEach(item => item.classList.remove('active'));
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            item.removeAttribute('aria-current');
+        });
+    
         element.classList.add('active');
+        element.setAttribute('aria-current', 'page');
+
         renderEmails();
     };
 
@@ -146,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     moreBtn.addEventListener('click', () => {
         moreOptions.classList.toggle('hidden');
         moreBtn.classList.toggle('expanded');
+        
         if (eventopenmore) {
             const MudaMais = document.getElementById('moreBtn');
             MudaMais.innerHTML = '<span class="material-symbols-outlined">expand_more</span> Menos'
