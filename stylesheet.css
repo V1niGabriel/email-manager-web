@@ -1,0 +1,561 @@
+:root {
+    --bg-color: #f6f8fc;
+    /*background color*/
+    --header-bg: #f6f8fc;
+    /*header background*/
+    --sidebar-bg: #f6f8fc;
+    /*sidebar background*/
+    --main-bg: #ffffff;
+    /*main background*/
+    --border-color: #e0e0e0;
+    /*cor da borda*/
+    --text-color-primary: #1f1f1f;
+    /*Cor do texto primária*/
+    --text-color-secondary: #5f6368;
+    /*Cor do texto secundária*/
+    --primary-blue: #0b57d0;
+    /*cor primária*/
+    --hover-bg: #e8eaed;
+    /*hover background */
+}
+
+/*Deixa a página zerada*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    overflow: hidden;
+    /* Evita a barra de rolagem geral */
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: var(--text-color-secondary);
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button:hover {
+    background-color: var(--hover-bg);
+}
+
+/* 1. Estilo do Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    height: 64px;
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-gmail {
+    height: 85px;
+}
+
+.header-middle {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#mail {
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #eaf1fb;
+    border-radius: 24px;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 720px;
+    height: 48px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.profile-button {
+    background-color: #B48CF3;
+    color: white;
+    font-weight: bold;
+}
+
+/* Layout Principal */
+.main-layout {
+    display: flex;
+    height: calc(100vh - 64px);
+    /* Altura total menos o cabeçalho */
+}
+
+/* 2. Barra Lateral Esquerda */
+.sidebar-left {
+    width: 256px;
+    padding: 12px 10px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.compose-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #c2e7ff;
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-bottom: 16px;
+}
+
+.compose-btn:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 6px 15px;
+    border-radius: 0 16px 16px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sidebar-nav li:hover {
+    background-color: var(--hover-bg);
+}
+
+.sidebar-nav li.active {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar-nav li.active .material-symbols-outlined {
+    color: white;
+}
+
+.email-count {
+    margin-left: auto;
+    font-size: 12px;
+}
+
+/* 3. Conteúdo Principal */
+.main-content {
+    flex-grow: 1;
+    background-color: var(--main-bg);
+    border-radius: 16px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.email-tabs {
+    display: flex;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.tab-item.active-tab {
+    color: var(--primary-blue);
+    border-bottom: 3px solid var(--primary-blue);
+    font-weight: 600;
+}
+
+.tab-item.active-tab .material-symbols-outlined {
+    color: var(--primary-blue);
+}
+
+.tab-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.email-list {
+    padding: 10px 0;
+}
+
+.email-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.email-row:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.email-row.unread {
+    font-weight: bold;
+    background-color: #f6f8fc;
+}
+
+.email-row.unread .sender,
+.email-row.unread .subject {
+    color: var(--text-color-primary);
+}
+
+.email-row-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 200px;
+}
+
+.email-row-middle {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subject {
+    color: var(--text-color-primary);
+}
+
+.preview {
+    color: var(--text-color-secondary);
+    margin-left: 5px;
+}
+
+.email-row-right {
+    margin-left: 20px;
+}
+
+/* 4. Barra Lateral Direita */
+.sidebar-right {
+    width: 56px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid var(--border-color);
+}
+
+.sidebar-right img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilos para o Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Começa oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--main-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #f1f3f4;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 12px 12px 0 0;
+}
+
+#modalTitle {
+    font-size: 16px;
+    color: var(--text-color-secondary);
+}
+
+#closeModalBtn {
+    font-size: 24px;
+    line-height: 1;
+}
+
+#emailForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+
+#emailForm input,
+#emailForm textarea {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+
+#emailForm input:focus,
+#emailForm textarea:focus {
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.save-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sectionEmail {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Ações de Editar/Excluir na Linha do E-mail */
+.email-row .actions {
+    display: none;
+    /* Oculto por padrão */
+}
+
+.email-row:hover .actions {
+    display: flex;
+    /* Aparece no hover */
+    gap: 5px;
+}
+
+.email-row:hover .date {
+    display: none;
+    /* Oculta a data para dar espaço */
+}
+
+/*Estilização do Alerta*/
+
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    max-width: 90%;
+    padding: 16px 20px;
+    border-radius: 8px;
+    color: white;
+    background-color: #1f425a;
+    font-weight: bold;
+    z-index: 2000;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.alert.success {
+    background-color: #2c947b;
+}
+
+.alert.signal {
+    background-color: #F9A825;
+}
+
+.alert.error {
+    background-color: #d93025;
+}
+
+.alert.hidden {
+    opacity: 0;
+    pointer-events: none;
+    top: 0px;
+}
+
+/* Estilo para o menu expansível */
+.sidebar-nav .hidden {
+    display: none;
+    /* Começa oculto */
+}
+
+/* Estilo para o botão "Mais" quando o menu está aberto */
+#moreBtn.expanded .material-symbols-outlined {
+    transform: rotate(180deg);
+    /* Gira a seta */
+}
+
+/* ESTILOS RESPONSIVOS             
+
+/* Para Tablets e Telas Menores (até 1024px) */
+@media (max-width: 1024px) {
+    .sidebar-left {
+        position: fixed;
+        /* Fica por cima do conteúdo */
+        left: 0;
+        top: 64px;
+        /* Abaixo do header */
+        height: calc(100% - 64px);
+        background-color: var(--bg-color);
+        z-index: 1001;
+        /* Garante que fique na frente */
+        transform: translateX(-100%);
+        /* Começa escondida à esquerda */
+        transition: transform 0.3s ease-in-out;
+        border-right: 1px solid var(--border-color);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-left.show {
+        transform: translateX(0);
+        /* Classe 'show' que o JS adiciona para exibir */
+    }
+
+    .sidebar-right {
+        display: none;
+        /* Esconde a barra lateral direita que é menos essencial */
+    }
+
+    .header-middle {
+        flex-grow: 2;
+        /* Dá mais espaço para a barra de pesquisa */
+    }
+}
+
+/* Para Celulares (até 768px) */
+@media (max-width: 768px) {
+    .header {
+        padding: 8px 12px;
+    }
+
+    #mail{
+        display: none;
+    }
+
+    .logo-gmail {
+        display: block;
+        width: 70px;
+        /* Esconde o logo para ganhar espaço */
+    }
+
+    .header-right .icon-button:nth-child(1),
+    /* Esconde o ícone de ajuda */
+    .header-right .icon-button:nth-child(3) {
+        /* Esconde o ícone de apps */
+        display: none;
+    }
+
+    .search-bar {
+        max-width: 100%;
+        height: 44px;
+    }
+
+    .main-content {
+        border-radius: 0;
+        /* Remove bordas arredondadas para ocupar a tela toda */
+    }
+
+    .email-row {
+        padding: 12px 15px;
+    }
+
+    .email-row-left {
+        width: auto;
+        /* Deixa a largura flexível */
+        gap: 10px;
+    }
+
+    /* Esconde o preview do email para uma lista mais compacta */
+    .email-row .preview {
+        display: none;
+    }
+
+    .email-tabs {
+        padding: 0 10px;
+    }
+
+    /* Transforma o botão "Escrever" em um botão flutuante (FAB) */
+    .compose-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        padding: 0;
+        justify-content: center;
+        font-size: 0;
+        /* Esconde o texto "Escrever" */
+        z-index: 1002;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Garante que apenas o ícone apareça no botão flutuante */
+    .compose-btn .material-symbols-outlined {
+        font-size: 24px;
+    }
+}
